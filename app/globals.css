@@ -169,11 +169,15 @@ div:has(.guess-background) + div:has(.guess-background) {
 @keyframes menuInAnimation {
   0% {
     transform: scale(0);
-    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
   }
   100% {
     transform: scale(1);
-    border-radius: 0;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
   }
 }
 
@@ -185,11 +189,15 @@ div:has(.guess-background) + div:has(.guess-background) {
 @keyframes menuOutAnimation {
   0% {
     transform: scale(1);
-    border-radius: 0;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
   }
   100% {
     transform: scale(0);
-    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
   }
 }
 
@@ -267,4 +275,3 @@ div:has(.guess-background) + div:has(.guess-background) {
     transform: scale(1);
   }
 }
-
