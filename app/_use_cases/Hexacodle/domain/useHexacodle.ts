@@ -81,6 +81,15 @@ export const useHexacodle = (): UseHexacodleReturn => {
   );
 
   const validateGuess = useCallback(() => {
+    if (
+      lastGuessedHexColor === targetHexColor ||
+      Object.keys(guessedHexColors).length === 5
+    ) {
+      setTimeout(() => {
+        openModal();
+      }, 300);
+      return;
+    }
     const currentGuessWithCloseness = Object.keys(currentGuess).reduce(
       (acc, key) => {
         return {
