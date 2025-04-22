@@ -1,3 +1,5 @@
+"use client";
+
 import { Guess } from "@/app/_use_cases/Hexacodle/domain/constants";
 import { transformGuessIntoHexaString } from "@/app/_use_cases/Hexacodle/domain/transformGuessIntoHexaString";
 
