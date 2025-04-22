@@ -85,9 +85,7 @@ export const useHexacodle = (): UseHexacodleReturn => {
       lastGuessedHexColor === targetHexColor ||
       Object.keys(guessedHexColors).length === 5
     ) {
-      setTimeout(() => {
-        openModal();
-      }, 300);
+      openModal();
       return;
     }
     const currentGuessWithCloseness = Object.keys(currentGuess).reduce(
@@ -146,7 +144,7 @@ export const useHexacodle = (): UseHexacodleReturn => {
     ) {
       setTimeout(() => {
         openModal();
-      }, 300);
+      }, 400);
     }
   }, [guessedHexColors, lastGuessedHexColor, openModal, targetHexColor]);
 

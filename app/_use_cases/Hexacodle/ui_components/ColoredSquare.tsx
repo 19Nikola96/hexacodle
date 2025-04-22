@@ -19,7 +19,7 @@ const ColoredSquare = ({
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <span>{label}</span>
-      <div className="w-32 h-32 rounded-lg neomorphism border-4 border-white relative overflow-hidden">
+      <div className="w-36 h-36 rounded-lg neomorphism border-4 border-white relative overflow-hidden">
         <div
           className="translate-in-animation w-full h-full"
           style={{ backgroundColor: hexColor ?? BASED_GUESS_HEX_COLOR }}
