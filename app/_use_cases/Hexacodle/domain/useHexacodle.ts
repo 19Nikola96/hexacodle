@@ -130,7 +130,14 @@ export const useHexacodle = (): UseHexacodleReturn => {
       }
       return "1";
     });
-  }, [currentGuess, targetHexColorMap]);
+  }, [
+    currentGuess,
+    guessedHexColors,
+    lastGuessedHexColor,
+    openModal,
+    targetHexColor,
+    targetHexColorMap,
+  ]);
 
   useEffect(() => {
     if (
