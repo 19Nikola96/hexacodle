@@ -75,7 +75,7 @@ export const Modal = ({
           <div
             ref={modalRef}
             className={cn(
-              "rounded-t-xl bg-white p-3 shadow-md",
+              "rounded-t-xl bg-[#ededed] p-3 shadow-md",
               "sm:max-w-[80%] sm:rounded-xl",
               animationClass,
               className,
