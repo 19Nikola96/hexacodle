@@ -162,7 +162,7 @@ div:has(.guess-background) + div:has(.guess-background) {
 }
 
 .menu-in-animation {
-  animation: .2s menuInAnimation;
+  animation: .2s menuInAnimation cubic-bezier(0.3, 0, 0, 1);
   transform-origin: top right;
 }
 
@@ -182,7 +182,7 @@ div:has(.guess-background) + div:has(.guess-background) {
 }
 
 .menu-out-animation {
-  animation: .2s menuOutAnimation forwards;
+  animation: .2s menuOutAnimation forwards cubic-bezier(0.3, 0, 0, 1);
   transform-origin: top right;
 }
 
@@ -274,4 +274,8 @@ div:has(.guess-background) + div:has(.guess-background) {
   100% {
     transform: scale(1);
   }
+}
+
+.hamburger-react {
+  z-index: 99;
 }

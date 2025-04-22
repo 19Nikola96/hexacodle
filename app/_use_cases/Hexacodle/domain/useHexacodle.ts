@@ -144,7 +144,7 @@ export const useHexacodle = (): UseHexacodleReturn => {
     ) {
       setTimeout(() => {
         openModal();
-      }, 400);
+      }, 600);
     }
   }, [guessedHexColors, lastGuessedHexColor, openModal, targetHexColor]);
 

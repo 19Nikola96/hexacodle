@@ -66,7 +66,7 @@ export const Modal = ({
           className={cn(
             "flex h-full w-full items-end justify-center",
             "lg:items-center",
-            "fixed left-0 top-0 z-50",
+            "fixed left-0 top-0",
             isOpen ? "nonScrollablePage" : "",
             backgroundAnimationClass,
           )}

@@ -12,9 +12,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-end z-10">
+      <div className="flex justify-end z-40">
         <Hamburger
-          toggled={isOpen}
           onToggle={(toggled) => {
             if (toggled) {
               openModal();
@@ -32,20 +31,7 @@ const Header = () => {
         className="h-full w-full rounded-none p-0"
         customModalAnimation={ModalAnimation.menu}
       >
-        <div className="flex justify-end z-10">
-          <Hamburger
-            toggled={isOpen}
-            onToggle={(toggled) => {
-              if (toggled) {
-                openModal();
-              } else {
-                closeModal();
-              }
-            }}
-            rounded
-            size={24}
-          />
-        </div>
+        <div></div>
       </Modal>
     </>
   );
