@@ -24,7 +24,7 @@ export const computeGuessCloseness = (
     return -1;
   }
 
-  if (difference < 2) {
+  if (difference <= 2) {
     return 1;
   } else if (difference > 2) {
     return 2;
