@@ -179,6 +179,14 @@ export const useHexacodle = ({
         );
       } else if (event.key === "Enter" && isValidateButtonEnable) {
         validateGuess();
+      } else if (event.key === "ArrowLeft") {
+        setSelectedTile((prev) =>
+          prev === "1" ? "6" : String(Number(prev) - 1),
+        );
+      } else if (event.key === "ArrowRight") {
+        setSelectedTile((prev) =>
+          prev === "6" ? "1" : String(Number(prev) + 1),
+        );
       }
     },
     [selectedTile, updateGuess, validateGuess, isValidateButtonEnable],

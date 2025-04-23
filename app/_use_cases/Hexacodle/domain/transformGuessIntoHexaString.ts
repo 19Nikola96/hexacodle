@@ -18,13 +18,13 @@ export const computeGuessCloseness = (
   const targetValue = parseInt(target, 16);
   const difference = targetValue - guessValue;
 
-  if (difference <= -2) {
+  if (difference < -2) {
     return -2;
   } else if (difference <= -1) {
     return -1;
   }
 
-  if (difference <= 2) {
+  if (difference < 2) {
     return 1;
   } else if (difference > 2) {
     return 2;
@@ -39,16 +39,16 @@ export const computeGuessClosenessIntoEmoji = (
     return "✅";
   }
 
-  if (guessCloseness <= -2) {
+  if (guessCloseness === -2) {
     return "⏬️";
-  } else if (guessCloseness <= -1) {
+  } else if (guessCloseness === -1) {
     return "🔽";
   }
 
-  if (guessCloseness <= 2) {
-    return "🔼";
-  } else if (guessCloseness > 2) {
+  if (guessCloseness === 2) {
     return "⏫️";
+  } else if (guessCloseness === 1) {
+    return "🔼";
   }
   return "✅";
 };
