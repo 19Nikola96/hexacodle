@@ -26,7 +26,11 @@ type UseHexacodleReturn = {
   validateGuess: () => void;
 };
 
-export const useHexacodle = (): UseHexacodleReturn => {
+type UseHexacodleParams = { isUnlimited: boolean | undefined };
+
+export const useHexacodle = ({
+  isUnlimited,
+}: UseHexacodleParams): UseHexacodleReturn => {
   const [selectedTile, setSelectedTile] = useState<string>("1");
   const [guessedHexColors, setGuessedHexColors] = useState<Guess[]>([]);
   const [currentGuess, setCurrentGuess] = useState<Guess>(
@@ -40,8 +44,11 @@ export const useHexacodle = (): UseHexacodleReturn => {
     [lastGuess],
   );
   const targetHexColor = useMemo(
-    () => generateHexColorWithSeed(computeTodayDateIntoSeed()),
-    [],
+    () =>
+      generateHexColorWithSeed(
+        isUnlimited ? Math.random() : computeTodayDateIntoSeed(),
+      ),
+    [isUnlimited],
   );
 
   const targetHexColorMap = useMemo(() => {

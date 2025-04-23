@@ -8,7 +8,9 @@ import Guesses from "@/app/_use_cases/Hexacodle/ui_components/Guesses";
 import KeyBoard from "@/app/_use_cases/Hexacodle/ui_components/KeyBoard";
 import { Modal } from "@/app/reusable_in_other_projetcs/Modal/Modal";
 
-const Hexacodle = () => {
+type HexacodleProps = { isUnlimited?: boolean | undefined };
+
+const Hexacodle = ({ isUnlimited }: HexacodleProps) => {
   const {
     targetHexColor,
     guessedHexColors,
@@ -20,7 +22,7 @@ const Hexacodle = () => {
     setSelectedTile,
     updateGuess,
     validateGuess,
-  } = useHexacodle();
+  } = useHexacodle({ isUnlimited });
 
   return (
     <>

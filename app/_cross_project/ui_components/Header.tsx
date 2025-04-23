@@ -6,13 +6,27 @@ import {
 } from "@/app/reusable_in_other_projetcs/Modal/Modal";
 import { useModal } from "@/app/reusable_in_other_projetcs/Modal/useModal";
 import Hamburger from "hamburger-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
+import { AiFillClockCircle } from "react-icons/ai";
+import { RiInfinityLine } from "react-icons/ri";
 
 const Header = () => {
   const { isOpen, openModal, closeModal, modalRef } = useModal();
+  const pathname = usePathname();
+  const isPathnameHome = useMemo(() => pathname === "/", [pathname]);
 
   return (
     <>
-      <div className="flex justify-end z-40">
+      <div className="flex justify-between z-40 items-center">
+        <Link href={isPathnameHome ? "/unlimited" : "/"} className="p-3">
+          {isPathnameHome ? (
+            <RiInfinityLine size={24} />
+          ) : (
+            <AiFillClockCircle size={24} />
+          )}
+        </Link>
         <Hamburger
           onToggle={(toggled) => {
             if (toggled) {
@@ -28,7 +42,7 @@ const Header = () => {
       <Modal
         modalRef={modalRef}
         isOpen={isOpen}
-        className="h-full w-full rounded-none p-0"
+        className="h-full w-full rounded-none pt-14 px-8 flex justify-end"
         customModalAnimation={ModalAnimation.menu}
       >
         <div></div>
