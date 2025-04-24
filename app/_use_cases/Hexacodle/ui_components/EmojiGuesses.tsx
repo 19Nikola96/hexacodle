@@ -9,7 +9,7 @@ type EmojiGuessesProps = {
 const EmojiGuesses = ({ finalGuesses }: EmojiGuessesProps) => {
   return (
     <div className="flex flex-col items-center gap-2">
-      <span>Congrats !</span>
+      <span>Congrats !!!</span>
       <div className="flex flex-col items-center gap-0.5 overflow-auto p-2">
         {finalGuesses.map((guess: Guess, index) => {
           return (
