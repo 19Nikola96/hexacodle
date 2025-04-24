@@ -62,7 +62,7 @@ const DarkModeToggle = () => {
       <Modal
         modalRef={modalRef}
         isOpen={isOpen}
-        className="h-full w-full rounded-none pt-14 px-8 flex justify-end"
+        className="h-full w-full rounded-none"
         customModalAnimation={ModalAnimation["dark-mode"]}
         zIndex="-z-10"
       >
