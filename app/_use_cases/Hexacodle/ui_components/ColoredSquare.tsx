@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Guess } from "@/app/_use_cases/Hexacodle/domain/constants";
 import { transformGuessIntoHexaString } from "@/app/_use_cases/Hexacodle/domain/transformGuessIntoHexaString";
 
-const BASED_GUESS_HEX_COLOR = "#55558B";
+const BASED_GUESS_HEX_COLOR = "#55558B00";
 
 type ColoredSquareProps = {
   hexColor?: string | undefined;

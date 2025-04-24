@@ -1,7 +1,7 @@
 "use client";
 
 import { useHexacodle } from "@/app/_use_cases/Hexacodle/domain/useHexacodle";
-import ColoredSquare from "@/app/_use_cases/Hexacodle/ui_components/ColoredSquare";
+import ColoredSquare from "@/app/_use_cases/Hexacodle/ui_components/ColoredSquareDynamic";
 import CurrentGuess from "@/app/_use_cases/Hexacodle/ui_components/CurrentGuess";
 import EmojiGuesses from "@/app/_use_cases/Hexacodle/ui_components/EmojiGuesses";
 import Guesses from "@/app/_use_cases/Hexacodle/ui_components/Guesses";
