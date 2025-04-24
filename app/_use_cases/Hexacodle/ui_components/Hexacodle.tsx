@@ -26,7 +26,7 @@ const Hexacodle = ({ isUnlimited }: HexacodleProps) => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-between gap-5 h-full pt-3">
+      <div className="flex flex-col items-center justify-between gap-5 h-full pt-3 relative z-10">
         <div className="flex gap-5">
           <ColoredSquare hexColor={targetHexColor} label="Target" />
           <ColoredSquare guessedHexColors={guessedHexColors} label="Guess" />

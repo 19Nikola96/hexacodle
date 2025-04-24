@@ -14,7 +14,7 @@ const CurrentGuess = ({
 }: CurrentGuessProps) => {
   return (
     <div className="flex gap-2 items-center justify-center">
-      <span>#</span>
+      <span className="dark:text-white">#</span>
       {Object.keys(currentGuess).map((key) => {
         return (
           <div
@@ -22,6 +22,7 @@ const CurrentGuess = ({
             onClick={() => setSelectedTile(key)}
             className={cn(
               "w-11 h-11 flex items-center justify-center rounded-sm neomorphism-sm border-slate-500 border-1 bg-white cursor-pointer",
+              "transition-all dark:bg-transparent dark:text-white",
               selectedTile === key ? "selected-tile-animation" : "",
             )}
           >

@@ -7,7 +7,13 @@ type UseModalReturnValue = {
   modalRef: React.RefObject<HTMLDivElement>;
 };
 
-export const useModal = (): UseModalReturnValue => {
+type UseModalParams = {
+  blockOutsideClosing?: boolean;
+};
+
+export const useModal = ({
+  blockOutsideClosing,
+}: UseModalParams): UseModalReturnValue => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +47,9 @@ export const useModal = (): UseModalReturnValue => {
         modalRef.current &&
         !modalRef.current.contains(event.target as Node)
       ) {
-        closeModal();
+        if (!blockOutsideClosing) {
+          closeModal();
+        }
       }
     };
 

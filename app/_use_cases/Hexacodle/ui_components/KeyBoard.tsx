@@ -52,6 +52,7 @@ const KeyBoard = ({
             onClick={validateGuess}
             className={cn(
               "bg-white neomorphism-sm flex items-center justify-center text-2xl w-24 h-10 rounded-full leading-0 cursor-pointer",
+              "dark:bg-transparent dark:text-white",
               !isValidateButtonEnable ? "opacity-50" : "pop-up-animation",
             )}
           >

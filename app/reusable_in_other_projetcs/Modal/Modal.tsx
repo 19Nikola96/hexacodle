@@ -9,6 +9,7 @@ export enum ModalAnimation {
   grow = "grow",
   translate = "translate",
   menu = "menu",
+  "dark-mode" = "dark-mode",
 }
 
 type ModalProps = {
@@ -17,6 +18,7 @@ type ModalProps = {
   modalRef: React.RefObject<HTMLDivElement>;
   className?: string;
   customModalAnimation?: ModalAnimation;
+  zIndex?: string;
 };
 
 export const OVERLAY_CONTAINER_HTML_ID = "modal_root";
@@ -27,6 +29,7 @@ export const Modal = ({
   modalRef,
   className,
   customModalAnimation,
+  zIndex = "z-50",
   ...props
 }: ModalProps) => {
   const [isVisible, setIsVisible] = useState(isOpen);
@@ -69,6 +72,7 @@ export const Modal = ({
             "fixed left-0 top-0",
             isOpen ? "nonScrollablePage" : "",
             backgroundAnimationClass,
+            zIndex,
           )}
           {...props}
         >
@@ -76,7 +80,6 @@ export const Modal = ({
             ref={modalRef}
             className={cn(
               "rounded-t-xl bg-[#ededed] p-3 shadow-md",
-              "sm:max-w-[80%] sm:rounded-xl",
               animationClass,
               className,
             )}

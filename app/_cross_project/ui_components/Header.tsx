@@ -1,5 +1,6 @@
 "use client";
 
+import DarkModeToggle from "@/app/_cross_project/ui_components/DarkModeToggle";
 import {
   Modal,
   ModalAnimation,
@@ -13,18 +14,27 @@ import { AiFillClockCircle } from "react-icons/ai";
 import { RiInfinityLine } from "react-icons/ri";
 
 const Header = () => {
-  const { isOpen, openModal, closeModal, modalRef } = useModal();
+  const { isOpen, openModal, closeModal, modalRef } = useModal({
+    blockOutsideClosing: false,
+  });
   const pathname = usePathname();
   const isPathnameHome = useMemo(() => pathname === "/", [pathname]);
 
   return (
     <>
       <div className="flex justify-between z-40 items-center">
+        <DarkModeToggle />
         <Link href={isPathnameHome ? "/unlimited" : "/"} className="p-3">
           {isPathnameHome ? (
-            <RiInfinityLine size={24} />
+            <RiInfinityLine
+              size={24}
+              className="grow-in-animation dark:text-white"
+            />
           ) : (
-            <AiFillClockCircle size={24} />
+            <AiFillClockCircle
+              size={24}
+              className="grow-in-animation dark:text-white"
+            />
           )}
         </Link>
         <Hamburger

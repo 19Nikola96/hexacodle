@@ -21,6 +21,7 @@ const KeyBoardButton = ({ value, updateGuess }: KeyBoardButtonProps) => {
       type="button"
       className={cn(
         "bg-white neomorphism-sm flex items-center justify-center text-2xl w-10 h-10 rounded-full cursor-pointer",
+        "transition-all dark:bg-transparent dark:text-white",
         isClicked ? "clicked-button-animation" : "",
       )}
     >

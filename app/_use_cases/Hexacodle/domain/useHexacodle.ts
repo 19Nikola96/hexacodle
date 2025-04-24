@@ -36,7 +36,9 @@ export const useHexacodle = ({
   const [currentGuess, setCurrentGuess] = useState<Guess>(
     CURRENT_GUESS_DEFAULT_VALUE,
   );
-  const { isOpen, openModal, modalRef } = useModal();
+  const { isOpen, openModal, modalRef } = useModal({
+    blockOutsideClosing: false,
+  });
 
   const lastGuess = guessedHexColors[guessedHexColors.length - 1];
   const lastGuessedHexColor = useMemo(

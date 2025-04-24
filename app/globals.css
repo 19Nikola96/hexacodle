@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   background-color: #ededed;
@@ -16,21 +17,26 @@ body {
   box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
 }
 
-/* body {
+.dark body {
   background-color: #1e293b;
+  transition-delay: 300ms;
 }
 
-.neomorphism {
+.dark .neomorphism {
   box-shadow: 8px 8px 16px #0f172a, -8px -8px 16px #334155;
 }
 
-.neomorphism-sm {
+.dark .neomorphism-sm {
   box-shadow: 2px 2px 6px #0f172a, -2px -2px 6px #334155;
 }
 
-.neomorphism-md {
+.dark .neomorphism-md {
   box-shadow: 4px 4px 8px #0f172a, -4px -4px 8px #334155;
-} */
+}
+
+.dark .hamburger-react > div {
+  background-color: white !important;
+}
 
 div:has(.guess-background) + div:has(.guess-background) {
   animation: insertBelow .2s;
@@ -196,6 +202,48 @@ div:has(.guess-background) + div:has(.guess-background) {
   100% {
     transform: scale(0);
     border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+}
+
+.dark-mode-in-animation {
+  background-color: #1e293b;
+  animation: .2s darkModeInAnimation cubic-bezier(0.3, 0, 0, 1);
+  transform-origin: top left;
+}
+
+@keyframes darkModeInAnimation {
+  0% {
+    transform: scale(0);
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+  }
+  100% {
+    transform: scale(1);
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+}
+
+.dark-mode-out-animation {
+  background-color: #1e293b;
+  animation: .2s darkModeOutAnimation forwards cubic-bezier(0.3, 0, 0, 1);
+  transform-origin: top left;
+}
+
+@keyframes darkModeOutAnimation {
+  0% {
+    transform: scale(1);
+    border-top-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+  }
+  100% {
+    transform: scale(0);
+    border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
   }

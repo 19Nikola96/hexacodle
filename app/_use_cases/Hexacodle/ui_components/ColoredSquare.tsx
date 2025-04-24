@@ -26,8 +26,8 @@ const ColoredSquare = ({
 
   return (
     <div className="flex flex-col items-center justify-center gap-2">
-      <span>{label}</span>
-      <div className="w-36 h-36 rounded-lg neomorphism border-4 border-white relative overflow-hidden">
+      <span className="dark:text-white">{label}</span>
+      <div className="w-38 h-38 rounded-lg neomorphism border-4 border-white relative overflow-hidden transition-all">
         <div
           className="translate-in-animation w-full h-full"
           id={dynamicId}

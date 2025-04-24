@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
         <Header />
-        {children}
+        <div className="h-[calc(100dvh-56px)]">{children}</div>
         <div id={OVERLAY_CONTAINER_HTML_ID}></div>
       </body>
     </html>
