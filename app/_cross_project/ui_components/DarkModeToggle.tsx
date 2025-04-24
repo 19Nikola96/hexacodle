@@ -47,7 +47,7 @@ const DarkModeToggle = () => {
         className="cursor-pointer p-2 z-50"
         onClick={() => setIsToggled((prev) => !prev)}
       >
-        <div className="neomorphism rounded-full flex w-10 h-10 justify-center items-start overflow-hidden">
+        <div className="transition-all neomorphism rounded-full flex w-10 h-10 justify-center items-start overflow-hidden">
           <div
             className={cn(
               "transition-all duration-300 mt-2 flex flex-col gap-2 ",

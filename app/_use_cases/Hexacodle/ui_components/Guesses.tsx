@@ -31,7 +31,7 @@ const Guesses = ({ guessedHexColors }: GuessesProps) => {
             className="flex gap-1 items-center justify-center p-1 relative"
           >
             <div
-              className="guess-background absolute left-0 h-full w-full -z-1 rounded-md neomorphism-sm"
+              className="guess-background absolute left-0 h-full w-full -z-1 rounded-md neomorphism-sm transition-all"
               style={{ backgroundColor: guessHexaColor }}
             ></div>
             {Object.values(guess).map(({ value, closeness }, index) => {
