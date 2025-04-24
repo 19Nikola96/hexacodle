@@ -76,8 +76,9 @@ export const useHexacodle = ({
         let nextTile = String(Number(prev) + 1);
         while (
           nextTile <= "6" &&
-          currentGuess[Number(nextTile)]?.value ===
-            targetHexColorMap[Number(nextTile)]
+          (currentGuess[Number(nextTile)]?.value ===
+            targetHexColorMap[Number(nextTile)] ||
+            currentGuess[Number(nextTile)]?.closeness === 0)
         ) {
           nextTile = String(Number(nextTile) + 1);
         }
