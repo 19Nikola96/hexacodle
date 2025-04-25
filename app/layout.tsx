@@ -17,6 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Hexaguessr",
   description: "Hexaguessr",
+  applicationName: "Hexaguessr",
 };
 
 export default function RootLayout({
