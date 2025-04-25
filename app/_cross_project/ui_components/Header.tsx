@@ -52,7 +52,7 @@ const Header = () => {
       <Modal
         modalRef={modalRef}
         isOpen={isOpen}
-        className="h-full w-full rounded-none pt-14 px-8 flex justify-end dark:bg-slate-800"
+        className="h-full w-full rounded-none pt-14 px-8 dark:bg-slate-800"
         customModalAnimation={ModalAnimation.menu}
       >
         <div></div>

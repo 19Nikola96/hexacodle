@@ -326,4 +326,5 @@ div:has(.guess-background) + div:has(.guess-background) {
 
 .hamburger-react {
   z-index: 99;
+  transform: none !important;
 }

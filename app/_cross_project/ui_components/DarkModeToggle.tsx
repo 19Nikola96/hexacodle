@@ -12,14 +12,15 @@ const DarkModeToggle = () => {
   const { isOpen, openModal, closeModal, modalRef } = useModal({
     blockOutsideClosing: true,
   });
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     if (isToggled) {
       openModal();
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-    } else {
+    }
+    if (isToggled === false) {
       closeModal();
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
