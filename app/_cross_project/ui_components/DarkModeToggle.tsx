@@ -17,7 +17,6 @@ const DarkModeToggle = () => {
   useEffect(() => {
     if (isToggled) {
       openModal();
-      navigator.vibrate([200, 100, 200]);
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
