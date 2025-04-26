@@ -6,12 +6,12 @@ import {
   ModalAnimation,
 } from "@/app/reusable_in_other_projetcs/Modal/Modal";
 import { useModal } from "@/app/reusable_in_other_projetcs/Modal/useModal";
-import Hamburger from "hamburger-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 import { RiInfinityLine } from "react-icons/ri";
+import { Sling as Hamburger } from "hamburger-react";
 
 const Header = () => {
   const { isOpen, openModal, closeModal, modalRef } = useModal({

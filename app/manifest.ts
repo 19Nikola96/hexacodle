@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "A simple game where you need to find the hex color",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
-    theme_color: "#ffffff",
+    background_color: "#ededed",
+    theme_color: "#ededed",
     icons: [
       {
         src: "/web-app-manifest-192x192.png",

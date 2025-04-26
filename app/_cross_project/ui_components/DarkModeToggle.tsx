@@ -45,7 +45,7 @@ const DarkModeToggle = () => {
     <>
       <button
         type="button"
-        className="cursor-pointer p-2 z-50"
+        className="cursor-pointer py-2 pl-2 z-50"
         onClick={() => setIsToggled((prev) => !prev)}
       >
         <div className="transition-all neomorphism rounded-full flex w-10 h-10 justify-center items-start overflow-hidden">
