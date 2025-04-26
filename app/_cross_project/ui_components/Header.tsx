@@ -22,7 +22,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="flex justify-between z-40 items-center">
+      <header className="flex justify-between z-40 items-center">
         <DarkModeToggle />
         <Link href={isPathnameHome ? "/unlimited" : "/"} className="p-3">
           {isPathnameHome ? (
@@ -48,7 +48,7 @@ const Header = () => {
           rounded
           size={24}
         />
-      </div>
+      </header>
       <Modal
         modalRef={modalRef}
         isOpen={isOpen}

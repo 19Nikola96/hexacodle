@@ -24,6 +24,7 @@ type UseHexacodleReturn = {
   setSelectedTile: (key: string) => void;
   updateGuess: (value: string) => void;
   validateGuess: () => void;
+  resetHexacodle: () => void;
 };
 
 type UseHexacodleParams = { isUnlimited: boolean | undefined };
@@ -36,6 +37,7 @@ export const useHexacodle = ({
   const [currentGuess, setCurrentGuess] = useState<Guess>(
     CURRENT_GUESS_DEFAULT_VALUE,
   );
+  const [resetTrigger, setResetTrigger] = useState<number>(0);
   const { isOpen, openModal, modalRef } = useModal({
     blockOutsideClosing: false,
   });
@@ -50,7 +52,8 @@ export const useHexacodle = ({
       generateHexColorWithSeed(
         isUnlimited ? Math.random() : computeTodayDateIntoSeed(),
       ),
-    [isUnlimited],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [isUnlimited, resetTrigger],
   );
 
   const targetHexColorMap = useMemo(() => {
@@ -202,6 +205,15 @@ export const useHexacodle = ({
     };
   }, [handleKeyPress]);
 
+  const resetHexacodle = () => {
+    if (isUnlimited) {
+      setResetTrigger((prev) => prev + 1);
+      setSelectedTile("1");
+      setGuessedHexColors([]);
+      setCurrentGuess(CURRENT_GUESS_DEFAULT_VALUE);
+    }
+  };
+
   return {
     targetHexColor,
     lastGuessedHexColor,
@@ -214,5 +226,6 @@ export const useHexacodle = ({
     setSelectedTile,
     updateGuess,
     validateGuess,
+    resetHexacodle,
   };
 };

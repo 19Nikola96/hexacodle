@@ -22,13 +22,18 @@ const Hexacodle = ({ isUnlimited }: HexacodleProps) => {
     setSelectedTile,
     updateGuess,
     validateGuess,
+    resetHexacodle,
   } = useHexacodle({ isUnlimited });
 
   return (
     <>
       <div className="flex flex-col items-center justify-between gap-5 h-full pt-3 relative z-10">
         <div className="flex gap-5">
-          <ColoredSquare hexColor={targetHexColor} label="Target" />
+          <ColoredSquare
+            hexColor={targetHexColor}
+            label="Target"
+            resetHexacodle={isUnlimited ? resetHexacodle : undefined}
+          />
           <ColoredSquare guessedHexColors={guessedHexColors} label="Guess" />
         </div>
         <Guesses guessedHexColors={guessedHexColors} />
