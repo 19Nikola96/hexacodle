@@ -148,7 +148,7 @@ div:has(.guess-background) + div:has(.guess-background) {
 }
 
 .fade-in-animation {
-  animation: fadeInAnimation .2s ease-in-out forwards;
+  animation: fadeInAnimation .5s cubic-bezier(0.3, 0, 0, 1) forwards;
   opacity: 0;
 }
 
@@ -156,10 +156,6 @@ div:has(.guess-background) + div:has(.guess-background) {
   0% {
     opacity: 0;
     transform: translateY(-10%);
-  }
-  70% {
-    opacity: 1;
-    transform: translateY(10%);
   }
   100% {
     opacity: 1;
@@ -210,18 +206,20 @@ div:has(.guess-background) + div:has(.guess-background) {
 .dark-mode-in-animation {
   background-color: #1e293b;
   animation: .2s darkModeInAnimation cubic-bezier(0.3, 0, 0, 1);
-  transform-origin: top left;
+  transform-origin: 10px 10px;
 }
 
 @keyframes darkModeInAnimation {
   0% {
     transform: scale(0);
+    border-top-left-radius: 25%;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
   }
   100% {
     transform: scale(1);
+    border-top-left-radius: 0%;
     border-top-right-radius: 0%;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
@@ -231,18 +229,23 @@ div:has(.guess-background) + div:has(.guess-background) {
 .dark-mode-out-animation {
   background-color: #1e293b;
   animation: .2s darkModeOutAnimation forwards cubic-bezier(0.3, 0, 0, 1);
-  transform-origin: top left;
+  transform-origin: 10px 10px;
 }
 
 @keyframes darkModeOutAnimation {
   0% {
     transform: scale(1);
+    border-top-left-radius: 0%;
     border-top-right-radius: 0%;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
   }
+  10% {
+    border-top-left-radius: 25%;
+  }
   100% {
     transform: scale(0);
+    border-top-left-radius: 50%;
     border-top-right-radius: 50%;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -326,5 +329,4 @@ div:has(.guess-background) + div:has(.guess-background) {
 
 .hamburger-react {
   z-index: 99;
-  transform: none !important;
 }
