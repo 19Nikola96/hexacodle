@@ -8,15 +8,18 @@ import {
 import { useModal } from "@/app/reusable_in_other_projetcs/Modal/useModal";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 import { RiInfinityLine } from "react-icons/ri";
 import { Sling as Hamburger } from "hamburger-react";
+import { cn } from "@/app/_cross_project/utils";
 
 const Header = () => {
   const { isOpen, openModal, closeModal, modalRef } = useModal({
     blockOutsideClosing: false,
   });
+  const [isClicked, setIsClicked] = useState(false);
+
   const pathname = usePathname();
   const isPathnameHome = useMemo(() => pathname === "/", [pathname]);
 
@@ -24,7 +27,16 @@ const Header = () => {
     <>
       <header className="flex justify-between z-40 items-center">
         <DarkModeToggle />
-        <Link href={isPathnameHome ? "/unlimited" : "/"} className="p-3">
+        <Link
+          href={isPathnameHome ? "/unlimited" : "/"}
+          className={cn("p-3", isClicked ? "clicked-button-animation" : "")}
+          onClick={() => {
+            setIsClicked(true);
+            setTimeout(() => {
+              setIsClicked(false);
+            }, 200);
+          }}
+        >
           {isPathnameHome ? (
             <RiInfinityLine
               size={24}
