@@ -39,7 +39,7 @@ const StatPanel = ({
         <span>Average try:</span>
         <span>{averageTry}</span>
       </div>
-      {title === "Unlimited games" && (
+      {title === "Caca" && (
         <div
           className="flex justify-end underline opacity-50 cursor-pointer"
           onClick={clearUnlimitedGames}
