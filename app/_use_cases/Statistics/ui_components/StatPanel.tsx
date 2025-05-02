@@ -29,7 +29,7 @@ const StatPanel = ({
       <div className="flex justify-between mb-2">
         <span>Win percentage:</span>
         <span>
-          {calculateWinPercentage(gameWon.length, gamePlayed.length)}%
+          {calculateWinPercentage(gameWon.length, gamePlayed.length)} %
         </span>
       </div>
       <div className="flex justify-between mb-2">

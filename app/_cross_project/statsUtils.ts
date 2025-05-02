@@ -1,5 +1,8 @@
 export const calculateWinPercentage = (won: number, played: number) => {
-  return played === 0 ? 0 : ((won / played) * 100).toFixed(2);
+  const winPercentage = played === 0 ? 0 : (won / played) * 100;
+  return Number.isInteger(Number(winPercentage))
+    ? winPercentage
+    : winPercentage.toFixed(2);
 };
 
 export const calculateAverage = (arr: number[]) => {
