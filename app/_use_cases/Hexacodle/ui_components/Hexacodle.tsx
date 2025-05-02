@@ -50,7 +50,11 @@ const Hexacodle = ({ isUnlimited }: HexacodleProps) => {
           />
         </div>
       </div>
-      <Modal isOpen={isOpen} modalRef={modalRef} className="h-2/3 w-full">
+      <Modal
+        isOpen={isOpen}
+        modalRef={modalRef}
+        className="h-2/3 w-full sm:w-3/5"
+      >
         <EmojiGuesses finalGuesses={guessedHexColors} />
       </Modal>
     </>

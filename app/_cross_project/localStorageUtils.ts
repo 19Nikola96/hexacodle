@@ -74,3 +74,7 @@ export const getTodayDailyGame = (): StoredGameState | null => {
     ) || null
   );
 };
+
+export const clearUnlimitedGames = () => {
+  localStorage.removeItem(UNLIMITED_KEY);
+};

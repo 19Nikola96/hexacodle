@@ -1,4 +1,7 @@
-import { StoredGameState } from "@/app/_cross_project/localStorageUtils";
+import {
+  clearUnlimitedGames,
+  StoredGameState,
+} from "@/app/_cross_project/localStorageUtils";
 import { calculateWinPercentage } from "@/app/_cross_project/statsUtils";
 import React from "react";
 
@@ -36,6 +39,14 @@ const StatPanel = ({
         <span>Average try:</span>
         <span>{averageTry}</span>
       </div>
+      {title === "Unlimited games" && (
+        <div
+          className="flex justify-end underline opacity-50 cursor-pointer"
+          onClick={clearUnlimitedGames}
+        >
+          Reset
+        </div>
+      )}
     </div>
   );
 };

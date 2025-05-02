@@ -201,7 +201,9 @@ export const useHexacodle = ({ isUnlimited }: UseHexacodleParams) => {
         status: HexacodleGameStatus.ARCHIVED,
         timestamp: Date.now(),
       };
-      archiveCurrentUnlimitedGame(current);
+      if (current.guessedHexColors.length !== 0) {
+        archiveCurrentUnlimitedGame(current);
+      }
       localStorage.removeItem(UNLIMITED_TARGET_KEY);
       setUnlimitedResetCount((prev) => prev + 1);
       setSelectedTile(DEFAULT_TILE);
@@ -217,7 +219,9 @@ export const useHexacodle = ({ isUnlimited }: UseHexacodleParams) => {
       const archived = loadUnlimitedGameList().filter(
         (g) => g.status === HexacodleGameStatus.ARCHIVED,
       );
-      saveUnlimitedGameList([...archived, game]);
+      if (game.guessedHexColors.length !== 0) {
+        saveUnlimitedGameList([...archived, game]);
+      }
     } else {
       const previous = loadDailyGameList().filter(
         (g) =>
