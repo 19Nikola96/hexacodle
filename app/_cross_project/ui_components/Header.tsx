@@ -13,6 +13,7 @@ import { AiFillClockCircle } from "react-icons/ai";
 import { RiInfinityLine } from "react-icons/ri";
 import { Sling as Hamburger } from "hamburger-react";
 import { cn } from "@/app/_cross_project/utils";
+import Statistics from "@/app/_use_cases/Statistics/ui_components/Statistics";
 
 const Header = () => {
   const { isOpen, openModal, closeModal, modalRef } = useModal({
@@ -64,10 +65,10 @@ const Header = () => {
       <Modal
         modalRef={modalRef}
         isOpen={isOpen}
-        className="h-full w-full rounded-none pt-14 px-8 dark:bg-slate-800"
+        className="h-full w-full rounded-none pt-5 px-8 dark:bg-slate-800"
         customModalAnimation={ModalAnimation.menu}
       >
-        <div></div>
+        <Statistics />
       </Modal>
     </>
   );

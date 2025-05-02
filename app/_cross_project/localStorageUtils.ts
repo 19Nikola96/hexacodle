@@ -16,8 +16,8 @@ export type StoredGameState = {
 
 export type StoredGameStateList = StoredGameState[];
 
-const DAILY_KEY = "hexacodle-daily";
-const UNLIMITED_KEY = "hexacodle-unlimited";
+export const DAILY_KEY = "hexacodle-daily";
+export const UNLIMITED_KEY = "hexacodle-unlimited";
 export const UNLIMITED_TARGET_KEY = "hexacodle-unlimited-target";
 
 export const loadUnlimitedGameList = (): StoredGameStateList => {
