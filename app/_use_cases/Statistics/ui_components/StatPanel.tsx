@@ -16,7 +16,7 @@ const StatPanel = ({
   averageTry,
 }: StatPanelProps) => {
   return (
-    <div className="neomorphism p-3 rounded-lg bg-white dark:bg-transparent">
+    <div className="neomorphism py-3 px-5 rounded-lg bg-white dark:bg-transparent">
       <h2 className="text-2xl font-semibold mb-4">{title}</h2>
       <div className="flex justify-between mb-2">
         <span>Games played:</span>
