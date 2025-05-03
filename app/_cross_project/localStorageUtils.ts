@@ -41,12 +41,12 @@ export const getLatestActiveUnlimitedGame = (): StoredGameState | null => {
   );
 };
 
-export const archiveCurrentUnlimitedGame = (current: StoredGameState) => {
+export const archiveCurrentUnlimitedGame = () => {
   const games = loadUnlimitedGameList().map((game) => ({
     ...game,
     status: HexacodleGameStatus.ARCHIVED,
   }));
-  saveUnlimitedGameList([...games, current]);
+  saveUnlimitedGameList(games);
 };
 
 export const loadDailyGameList = (): StoredGameState[] => {

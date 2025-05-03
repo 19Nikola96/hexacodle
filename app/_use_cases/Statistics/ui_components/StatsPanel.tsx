@@ -12,7 +12,7 @@ type StatPanelProps = {
   averageTry: string;
 };
 
-const StatPanel = ({
+const StatsPanel = ({
   title,
   gamePlayed,
   gameWon,
@@ -39,7 +39,7 @@ const StatPanel = ({
         <span>Average try:</span>
         <span>{averageTry}</span>
       </div>
-      {title === "Caca" && (
+      {title === "Unlimited games" && (
         <div
           className="flex justify-end underline opacity-50 cursor-pointer"
           onClick={clearUnlimitedGames}
@@ -51,4 +51,4 @@ const StatPanel = ({
   );
 };
 
-export default StatPanel;
+export default StatsPanel;

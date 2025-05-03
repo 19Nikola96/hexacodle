@@ -3,7 +3,7 @@ import {
   loadDailyGameList,
   loadUnlimitedGameList,
 } from "@/app/_cross_project/localStorageUtils";
-import StatPanel from "@/app/_use_cases/Statistics/ui_components/StatPanel";
+import StatsPanel from "@/app/_use_cases/Statistics/ui_components/StatsPanel";
 import { calculateAverage } from "@/app/_cross_project/statsUtils";
 
 const Statistics = () => {
@@ -36,13 +36,13 @@ const Statistics = () => {
     <div className="fade-in-animation flex flex-col dark:text-white">
       <h1 className="text-3xl font-bold mb-6 text-center">Statistics</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <StatPanel
+        <StatsPanel
           title="Daily games"
           gamePlayed={dailyGamePlayed}
           gameWon={dailyGameWon}
           averageTry={dailyGameAverageTry}
         />
-        <StatPanel
+        <StatsPanel
           title="Unlimited games"
           gamePlayed={unlimitedGamePlayed}
           gameWon={unlimitedGameWon}

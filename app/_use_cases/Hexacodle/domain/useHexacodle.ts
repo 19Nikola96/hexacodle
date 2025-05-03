@@ -194,16 +194,7 @@ export const useHexacodle = ({ isUnlimited }: UseHexacodleParams) => {
 
   const resetHexacodle = () => {
     if (isUnlimited) {
-      const current: StoredGameState = {
-        guessedHexColors,
-        currentGuess,
-        selectedTile,
-        status: HexacodleGameStatus.ARCHIVED,
-        timestamp: Date.now(),
-      };
-      if (current.guessedHexColors.length !== 0) {
-        archiveCurrentUnlimitedGame(current);
-      }
+      archiveCurrentUnlimitedGame();
       localStorage.removeItem(UNLIMITED_TARGET_KEY);
       setUnlimitedResetCount((prev) => prev + 1);
       setSelectedTile(DEFAULT_TILE);
